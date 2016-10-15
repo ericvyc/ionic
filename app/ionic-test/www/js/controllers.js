@@ -24,11 +24,28 @@ function ($scope, $stateParams) {
 
 }])
 
-.controller('postsCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+.controller('postsCtrl', ['$http', '$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
+function ($http, $scope, $stateParams) {
 
+	var me = $scope;
+	
+	me.getPosts = function () {
+		
+		$http.get("http://localhost:8080/backend/wordpress/wp-json/wp/v2/posts")
+		.success(function(data) {
+			debugger;
+			me.posts = data;
+		})
+		.error(function(response) {
+			debugger;
+			$scope.message="Error";
+		});
+		
+	};
+	
+	me.getPosts();
 
 }])
    
