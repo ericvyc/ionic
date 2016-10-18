@@ -42,7 +42,7 @@ function ($http, $scope, $stateParams) {
 		    me.posts = data;
 		})
 		.error(function (response) {
-		    me.message = "Error";
+		    me.message = "Erro";
 		});
 
     };
