@@ -1,10 +1,13 @@
 <ion-view title="Posts" id="page3">
     <ion-content padding="true" class="has-header">
-    <div ng-repeat="p in posts">
-        <span>{{p.title.rendered}}</span><br />
-    	<span ng-bind-html="p.content.rendered">{{p.content.rendered}}</span>
-        <span>{{p.link}}</span>
-        <hr />
-    </div>
+    	<ion-list show-delete="true"
+          show-reorder="true"
+          can-swipe="true">
+    		<ion-item ng-repeat="p in posts">
+    			<span>{{p.title.rendered}}</span><br />
+				<span ng-bind-html="p.content.rendered">{{p.content.rendered}}</span>
+				<span>{{p.link}}</span>
+ 			</ion-item>
+		</ion-list>
     </ion-content>
 </ion-view>

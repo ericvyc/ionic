@@ -1,5 +1,5 @@
 angular.module('app.controllers', [])
-  
+
 .controller('homeCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
@@ -7,7 +7,7 @@ function ($scope, $stateParams) {
 
 
 }])
-   
+
 .controller('cartCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
@@ -15,7 +15,7 @@ function ($scope, $stateParams) {
 
 
 }])
-   
+
 .controller('cloudCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
@@ -29,24 +29,24 @@ function ($scope, $stateParams) {
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($http, $scope, $stateParams) {
 
-	var me = $scope;
-	
-	me.getPosts = function () {
-		
-	    $http.get("http://pirocademacacolouco.esy.es/wp-json/wp/v2/posts")
-		.success(function(data) {
-			me.posts = data;
+    var me = $scope;
+
+    me.getPosts = function () {
+
+        $http.get("http://pirocademacacolouco.esy.es/wp-json/wp/v2/posts")
+		.success(function (data) {
+		    me.posts = data;
 		})
-		.error(function(response) {
-			me.message = "Error";
+		.error(function (response) {
+		    me.message = "Error";
 		});
-		
-	};
-	
-	me.getPosts();
+
+    };
+
+    me.getPosts();
 
 }])
-   
+
 .controller('menuCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
@@ -54,4 +54,3 @@ function ($scope, $stateParams) {
 
 
 }])
- 
