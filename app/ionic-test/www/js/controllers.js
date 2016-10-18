@@ -30,7 +30,11 @@ function ($scope, $stateParams) {
 function ($http, $scope, $stateParams) {
 
     var me = $scope;
-
+    
+    me.shouldShowDelete = true;
+    me.shouldShowReorder = true;
+    me.listCanSwipe = true;
+    
     me.getPosts = function () {
 
         $http.get("http://pirocademacacolouco.esy.es/wp-json/wp/v2/posts")
