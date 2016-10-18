@@ -33,14 +33,12 @@ function ($http, $scope, $stateParams) {
 	
 	me.getPosts = function () {
 		
-		$http.get("http://localhost:8080/backend/wordpress/wp-json/wp/v2/posts")
+	    $http.get("http://pirocademacacolouco.esy.es/wp-json/wp/v2/posts")
 		.success(function(data) {
-			debugger;
 			me.posts = data;
 		})
 		.error(function(response) {
-			debugger;
-			$scope.message="Error";
+			me.message = "Error";
 		});
 		
 	};

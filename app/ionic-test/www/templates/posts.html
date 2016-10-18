@@ -1,7 +1,10 @@
 <ion-view title="Posts" id="page3">
     <ion-content padding="true" class="has-header">
     <div ng-repeat="p in posts">
-    	<span>{{p.id}}</span>
+        <span>{{p.title.rendered}}</span><br />
+    	<span ng-bind-html="p.content.rendered">{{p.content.rendered}}</span>
+        <span>{{p.link}}</span>
+        <hr />
     </div>
     </ion-content>
 </ion-view>
